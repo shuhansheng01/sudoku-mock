@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sudoku+ — Login</title>
+  <link rel="stylesheet" href="../assets/css/common.css">
+  <link rel="stylesheet" href="../assets/css/forms.css">
+</head>
+<body>
+  <header class="site-nav" role="navigation">
+  <a class="brand" href="../index.html"><i class="logo"></i><span>Sudoku+</span></a>
+  <nav class="nav-links">
+    <a href="../index.html">Home</a>
+    <a href="../selection/index.html">Select</a>
+    <a href="../game-hard/index.html">9×9</a>
+    <a href="../game-easy/index.html">6×6</a>
+    <a href="../rules/index.html">Rules</a>
+    <a href="../high-scores/index.html">High Scores</a>
+    <a aria-current="page" href="../login/index.html">Login</a>
+    <a href="../register/index.html">Register</a>
+  </nav>
+</header>
+  <div class="wrapper">
+    <main>
+      <h1 class="page-title">Login</h1>
+      <form class="form" action="#" method="post">
+        <label for="user">Username</label>
+        <input id="user" name="user" type="text" placeholder="yourname" required>
+        <label for="pass">Password</label>
+        <input id="pass" name="pass" type="password" placeholder="••••••••" required>
+        <div class="actions">
+          <button class="btn primary" type="submit">Sign in</button>
+          <a class="btn" href="../register/index.html">Create an account</a>
+        </div>
+      </form>
+    </main>
+    <footer><p>Passwords are obscured using the appropriate input type.</p></footer>
+  </div>
+</body>
+</html>

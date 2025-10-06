@@ -1,0 +1,131 @@
+/* ✿ Natural Cute Theme — Fonts */
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700&family=Quicksand:wght@500;700&display=swap");
+
+/* ✿ Palette */
+:root{
+  --bg: #f7fbf7;          /* 页面背景：浅薄荷奶白 */
+  --surface: #ffffff;      /* 卡片/面板背景 */
+  --muted: #5d6d5f;        /* 次要文字：灰绿 */
+  --text: #2e3a2f;         /* 主文字：深苔绿 */
+  --brand: #6ac48a;        /* 薄荷叶绿（主色） */
+  --accent: #ffd166;       /* 一点阳光黄（点缀） */
+  --accent-2: #bfe3ff;     /* 天空蓝（弱点缀） */
+  --ok: #64c3b5;           /* 水绿 */
+  --grid: #d8e8d8;         /* 棋盘边框：浅鼠尾草绿 */
+  --shadow: 0 8px 24px rgba(106, 196, 138, .18);
+}
+
+*{ box-sizing:border-box }
+html,body{ height:100% }
+body{
+  margin:0; padding:0;
+  font-family:"M PLUS Rounded 1c", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(900px 600px at 20% -10%, #eaf7f0 0%, transparent 60%),
+    radial-gradient(900px 600px at 110% 10%, #e6f5ff 0%, transparent 60%),
+    var(--bg);
+}
+
+/* ====== LAYOUT ====== */
+.wrapper{ min-height:100%; display:flex; flex-direction:column }
+
+/* ✿ Sticky Navbar：半透明奶白 + 柔和阴影 */
+.site-nav{
+  position:fixed; top:0; left:0; right:0; height:68px;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:0 18px; background:rgba(255,255,255,.86); backdrop-filter: blur(10px);
+  border-bottom:1px solid #e7efe7; z-index:1000; box-shadow: var(--shadow);
+  border-radius: 0 0 18px 18px;
+}
+.brand{ display:flex; align-items:center; gap:10px; text-decoration:none }
+.brand .logo{
+  width:28px; height:28px; border-radius:8px;
+  background:
+    conic-gradient(from 0deg, var(--brand), #9fe3b9, var(--accent-2), var(--accent), var(--brand));
+  display:inline-block; transform:rotate(8deg)
+}
+.brand span{
+  font-family: "Quicksand", ui-rounded, system-ui, sans-serif;
+  font-weight:700; letter-spacing:.2px; color:var(--text)
+}
+
+/* ✿ Nav 链接：圆润 pill */
+.nav-links{ display:flex; gap:8px; align-items:center }
+.nav-links a{
+  text-decoration:none; color:var(--muted); padding:10px 14px;
+  border-radius:999px; transition: transform .15s ease, color .15s ease, background .2s ease, box-shadow .2s ease;
+}
+.nav-links a:hover{
+  color:var(--text); background:#f0f7f0; transform: translateY(-1px); box-shadow: 0 4px 14px rgba(106, 196, 138, .18);
+}
+.nav-links a[aria-current="page"], .nav-links a.active{
+  color:var(--text); background:linear-gradient(180deg,#f1faf4,#eaf6ff);
+  box-shadow: 0 4px 14px rgba(191, 227, 255, .28);
+}
+
+/* ✿ Main/Footers */
+main{ padding:96px 18px 24px; max-width:1100px; width:100%; margin:0 auto }
+footer{ margin-top:auto; padding:24px 16px 96px; color:var(--muted); text-align:center }
+
+/* ✿ 卡片 & 按钮 */
+.card{
+  background: var(--surface);
+  border:1px solid #e7efe7;
+  border-radius:20px; padding:20px; box-shadow: var(--shadow);
+}
+.card h1,.card h2,.card h3{
+  font-family:"Quicksand", ui-rounded, system-ui, sans-serif; margin-top:0
+}
+.btn{
+  display:inline-block; background:linear-gradient(180deg,#fafffa,#f2fbff);
+  color:var(--text); border:1px solid #e7efe7; padding:10px 16px;
+  border-radius:14px; text-decoration:none; font-weight:700; font-family:"Quicksand", ui-rounded, system-ui, sans-serif;
+  transition: transform .15s ease, box-shadow .2s ease, background .2s ease;
+}
+.btn:hover{ transform: translateY(-1px); box-shadow: var(--shadow) }
+.btn:active{ transform: translateY(0) }
+.btn.primary{
+  background:linear-gradient(180deg,#e9fbf1,#fffbea);
+  border-color:#e5f2e7;
+}
+.btn.ghost{ background:transparent; border-color:#e5efe6 }
+
+/* ✿ 列表/表格 */
+ul.clean{ list-style:none; padding:0; margin:0 }
+ul.clean li{
+  padding:12px 14px; border:1px solid #e7efe7; border-radius:14px; background:#ffffff; box-shadow: 0 4px 10px rgba(0,0,0,.03)
+}
+.table{ width:100%; border-collapse:collapse; overflow:hidden; border-radius:14px; border:1px solid #e7efe7; background:#fff }
+.table th,.table td{ padding:12px 14px; border-bottom:1px solid #eef5ee; text-align:left }
+.table tr:hover{ background:#f7fbf7 }
+
+/* ✿ 表单 */
+label{ display:block; font-weight:700; margin:14px 0 8px; font-family:"Quicksand", ui-rounded, system-ui, sans-serif }
+input[type="text"], input[type="password"], input[type="number"], input[type="email"]{
+  width:100%; padding:12px 14px; border-radius:14px; border:1px solid #dfeadd; background:#fbfffb; color:var(--text);
+  transition: box-shadow .2s ease, border-color .2s ease, background .2s ease;
+}
+input::placeholder{ color:#96a69a; opacity:1 }
+input:focus{ outline:none; border-color:#9fe3b9; box-shadow:0 0 0 4px rgba(159, 227, 185, .25); background:#ffffff }
+
+/* ✿ 标题 */
+.page-title{
+  font-family:"Quicksand", ui-rounded, system-ui, sans-serif;
+  font-size:30px; font-weight:700; margin:0 0 8px;
+}
+.page-sub{ color:var(--muted); margin:0 0 20px }
+
+/* ✿ Skip link */
+.skip-link{ position:absolute; left:-9999px }
+.skip-link:focus{ left:16px; top:76px; background:#ffffff; padding:8px 10px; border-radius:10px; border:1px solid #e5efe6 }
+
+/* ✿ Mobile: Navbar 移到底部 + 保持卡通圆润 */
+@media (max-width: 420px){
+  .site-nav{ top:auto; bottom:0; height:68px; border-bottom:none; border-top:1px solid #e7efe7; border-radius:18px 18px 0 0 }
+  main{ padding:24px 16px 96px }
+  footer{ padding-bottom:128px }
+  .nav-links{ gap:4px }
+  .nav-links a{ padding:10px 12px }
+  .brand span{ font-size:15px }
+}

@@ -1,0 +1,41 @@
+/* 棋盘：暖白底 + 浅绿网格 + 圆角 */
+.board{
+  width:min(560px, 100%); aspect-ratio:1/1; display:grid; margin:0 auto;
+  background:#ffffff; border:2px solid var(--grid); border-radius:16px; overflow:hidden;
+  box-shadow: 0 8px 28px rgba(106,196,138,.14);
+}
+.cell{ border:1px solid var(--grid); display:flex; align-items:center; justify-content:center; background:#fcfffc }
+.cell:nth-child(odd){ background:#fbfff8 } /* 轻微棋盘纹理 */
+
+.cell input{
+  width:100%; height:100%; text-align:center; background:transparent; border:none;
+  color:var(--text); font-size: clamp(16px, 2.2vw, 28px); font-weight:700;
+  font-family:"Quicksand", ui-rounded, system-ui, sans-serif;
+}
+.cell input::-webkit-outer-spin-button, .cell input::-webkit-inner-spin-button{ -webkit-appearance: none; margin: 0; }
+.cell input[type=number]{ -moz-appearance:textfield; }
+.cell input:focus{ outline:none; background:#fffbea } /* 选中时：淡淡阳光黄 */
+
+.board.nine{ grid-template-columns: repeat(9, 1fr); grid-template-rows: repeat(9, 1fr) }
+.board.nine .cell:nth-child(3n+1){ border-left-width:2px }
+.board.nine .cell:nth-child(9n){ border-right-width:2px }
+.board.nine .cell:nth-child(-n+9){ border-top-width:2px }
+.board.nine .cell:nth-child(n+73){ border-bottom-width:2px }
+.board.nine .cell:nth-child(n+19):nth-child(-n+27),
+.board.nine .cell:nth-child(n+46):nth-child(-n+54){ border-top-width:2px }
+
+.board.six{ grid-template-columns: repeat(6, 1fr); grid-template-rows: repeat(6, 1fr) }
+.board.six .cell:nth-child(6n){ border-right-width:2px }
+.board.six .cell:nth-child(-n+6){ border-top-width:2px }
+.board.six .cell:nth-child(n+31){ border-bottom-width:2px }
+.board.six .cell:nth-child(n+13):nth-child(-n+24),
+.board.six .cell:nth-child(n+25):nth-child(-n+36){ border-top-width:2px }
+.board.six .cell:nth-child(3n+1){ border-left-width:2px }
+
+.meta{
+  display:flex; align-items:center; justify-content:center; gap:16px; margin:18px 0; color:var(--muted)
+}
+.badge{
+  background:#ffffff; border:1px solid #e7efe7; padding:8px 10px; border-radius:999px; font-weight:700;
+  font-family:"Quicksand", ui-rounded, system-ui, sans-serif;
+}

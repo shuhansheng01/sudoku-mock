@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sudoku+ — Register</title>
+  <link rel="stylesheet" href="../assets/css/common.css">
+  <link rel="stylesheet" href="../assets/css/forms.css">
+</head>
+<body>
+  <header class="site-nav" role="navigation">
+  <a class="brand" href="../index.html"><i class="logo"></i><span>Sudoku+</span></a>
+  <nav class="nav-links">
+    <a href="../index.html">Home</a>
+    <a href="../selection/index.html">Select</a>
+    <a href="../game-hard/index.html">9×9</a>
+    <a href="../game-easy/index.html">6×6</a>
+    <a href="../rules/index.html">Rules</a>
+    <a href="../high-scores/index.html">High Scores</a>
+    <a href="../login/index.html">Login</a>
+    <a aria-current="page" href="../register/index.html">Register</a>
+  </nav>
+</header>
+  <div class="wrapper">
+    <main>
+      <h1 class="page-title">Create Account</h1>
+      <form class="form" action="#" method="post">
+        <label for="ruser">Username</label>
+        <input id="ruser" name="ruser" type="text" placeholder="yourname" required>
+        <label for="rpass">Password</label>
+        <input id="rpass" name="rpass" type="password" placeholder="••••••••" required>
+        <label for="vpass">Verify password</label>
+        <input id="vpass" name="vpass" type="password" placeholder="••••••••" required>
+        <div class="actions">
+          <button class="btn primary" type="submit">Register</button>
+          <a class="btn ghost" href="../login/index.html">Back to Login</a>
+        </div>
+      </form>
+    </main>
+    <footer><p>Fields only — logic to be added later.</p></footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+/* 清新自然的首页视觉 */
+.hero{ display:grid; grid-template-columns:1.2fr .8fr; gap:24px; align-items:center }
+.hero h1{
+  font-family:"Quicksand", ui-rounded, system-ui, sans-serif;
+  font-size:44px; line-height:1.05; margin:.2em 0;
+}
+.hero p{ color:var(--muted) }
+
+/* 柔和的“叶片光斑”背景块 */
+.hero .art{
+  min-height:240px; border-radius:20px; border:1px solid #e7efe7;
+  background:
+    radial-gradient(260px 200px at 70% 10%, #fff8e6 0%, transparent 60%),
+    radial-gradient(300px 240px at 10% 90%, #eafaf0 0%, transparent 60%),
+    linear-gradient(180deg, #ffffff, #f7fbf7);
+  box-shadow: var(--shadow);
+}
+
+.features{ grid-template-columns:repeat(3,1fr) }
+.features .card{ transition: transform .2s ease }
+.features .card:hover{ transform: translateY(-4px) }
+
+@media (max-width: 900px){
+  .hero{ grid-template-columns:1fr }
+  .features{ grid-template-columns:1fr }
+}
